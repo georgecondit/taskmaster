@@ -6,6 +6,8 @@ class ListService {
 
   constructor() {
         ProxyState.on('lists', saveState)
+        ProxyState.on('isDone', saveState)
+        ProxyState.on('color', saveState)
   }
 
   addList(rawList) {
@@ -16,6 +18,8 @@ class ListService {
         ProxyState.lists = ProxyState.lists.filter(l => l.id != listId)
         ProxyState.listItems = ProxyState.listItems.filter(l => l.listId != listId)  
   }
+
+  
 }
 
 export const listService = new ListService();

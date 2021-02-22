@@ -221,7 +221,7 @@ label {
 }
 
 button {
-  border-radius: 0;
+  border-radius: 5%;
 }
 
 button:focus {
@@ -2078,7 +2078,9 @@ select.form-control[size], select.form-control[multiple] {
 textarea.form-control {
   height: auto;
 }
-
+.font{
+  font-family: 'Akaya Telivigala', cursive;
+}
 .form-group {
   margin-bottom: 1rem;
 }
@@ -4286,7 +4288,7 @@ input[type=button].btn-block {
   background-color: white;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
 }
 .card > hr {
   margin-right: 0;
@@ -4310,11 +4312,13 @@ input[type=button].btn-block {
 .card > .list-group + .card-footer {
   border-top: 0;
 }
-
+.done-color{
+  color: silver;
+}
 .card-body {
   flex: 1 1 auto;
   min-height: 1px;
-  padding: 1.25rem;
+  padding: .25rem;
 }
 
 .card-title {

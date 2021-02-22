@@ -5,14 +5,24 @@
 @import "./loaders.scss";
 
 body {
-  display: flex;
+  display: inline-block;
   flex-direction: column;
   min-height: 100vh;
   background-color: $body-bg;
+  border-radius: 5%;
 }
 
 main {
   flex-grow: 1;
+}
+
+.card-columns {
+  @include media-breakpoint-only(lg) {
+    column-count: 4;
+  }
+  @include media-breakpoint-only(xl) {
+    column-count: 5;
+  }
 }
 
 

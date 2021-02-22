@@ -11,13 +11,18 @@ export default class ListItemsController{
         let form = event.target
         let rawListItems = {
             title: form.title.value,
-            listId: listId
+            listId: listId,
+        
         }
 
-   listItemsService.addList(rawListItems)       
+   listItemsService.addList(rawListItems)
+   form.reset()   
     }
 
-    delete(listItemsId) {
-        listItemsService.delete(listItemsId)
+    delete(listItemId) {
+        if(window.confirm('Are you sure you want to delete this item?') == true)
+        listItemsService.delete(listItemId)
     }
+
+   
 }

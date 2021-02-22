@@ -1,21 +1,25 @@
 import { generateId } from "../Utils/GenerateId.js";
-
+import { ProxyState } from "../AppState.js"
 export default class ListItems {
-    constructor({ title, id = generateId(), listId })
+    constructor({ title, listId = generateId(), listItemId, isDone })
     {
         this.title = title
-        this.id = id
+        this.listItemId = listItemId
         this.listId = listId
+        this.isDone = isDone
     }
 
     get Template() {
         return /* html */`
-        <div class="col-12">
-            <h1 class="" >${this.title}<button type="button" class="text-danger close mt-3"
-                    onclick="app.listItemsController.delete('${this.id}')"><span>&times;</span></button> </h1>
-        </div>
+        
+            <div class="col-12">
+                <p><input id="${this.listId}" class="form-check-input" type="checkbox" name="${this.listId}" onchange="app.listController.itemDone(${this.listId})">
+
+                ${this.title}
+
+                <button type="button" class="text-danger close" onclick="app.listItemsController.delete(${this.listItemId})"><span>&times;</span></button></p>
+            </div>
+    
         `
     }
 }
-
-//${this.title.includes('extra') ? 'text-danger': ''}
