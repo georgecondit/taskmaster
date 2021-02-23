@@ -16,8 +16,8 @@ class ListItemsService{
         
     }
     
-    delete(listItemsId) {
-        ProxyState.listItems = ProxyState.listItems.filter(l => l.listId != listItemsId)
+    delete(id) {
+        ProxyState.listItems = ProxyState.listItems.filter(l => l.id != id)
 
     }
 

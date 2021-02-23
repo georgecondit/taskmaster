@@ -19,9 +19,9 @@ export default class ListItemsController{
    form.reset()   
     }
 
-    delete(listItemId) {
+    delete(id) {
         if(window.confirm('Are you sure you want to delete this item?') == true)
-        listItemsService.delete(listItemId)
+        listItemsService.delete(id)
     }
 
    

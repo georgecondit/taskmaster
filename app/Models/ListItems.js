@@ -1,23 +1,23 @@
 import { generateId } from "../Utils/GenerateId.js";
 import { ProxyState } from "../AppState.js"
 export default class ListItems {
-    constructor({ title, listId = generateId(), listItemId, isDone })
+    constructor({ title, id = generateId(), isDone = 0,  listId})
     {
         this.title = title
-        this.listItemId = listItemId
+        this.id = id
         this.listId = listId
-        this.isDone = isDone
+        this.isDone = 0
     }
 
     get Template() {
         return /* html */`
         
             <div class="col-12">
-                <p><input id="${this.listId}" class="form-check-input" type="checkbox" name="${this.listId}" onchange="app.listController.itemDone(${this.listId})">
+                <p><input id="${this.listId}" class="form-check-input" type="checkbox" name="${this.listId}" onchange="app.listController.itemDone('${this.listId}')">
 
                 ${this.title}
 
-                <button type="button" class="text-danger close" onclick="app.listItemsController.delete(${this.listItemId})"><span>&times;</span></button></p>
+                <button type="button" class="text-danger close" onclick="app.listItemsController.delete('${this.id}')"><span>&times;</span></button></p>
             </div>
     
         `
